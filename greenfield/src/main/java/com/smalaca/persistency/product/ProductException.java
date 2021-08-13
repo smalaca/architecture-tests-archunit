@@ -2,7 +2,7 @@ package com.smalaca.persistency.product;
 
 import java.util.UUID;
 
-public class ProductException extends RuntimeException {
+class ProductException extends RuntimeException {
     private ProductException(String message) {
         super(message);
     }
