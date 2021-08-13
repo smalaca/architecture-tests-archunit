@@ -2,6 +2,7 @@ package com.smalaca.persistency.product;
 
 import com.smalaca.command.product.Price;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 public class ProductReadModel {
@@ -10,7 +11,7 @@ public class ProductReadModel {
     private final String description;
     private final Price price;
 
-    ProductReadModel(UUID id, String name, String description, Price price) {
+    public ProductReadModel(UUID id, String name, String description, Price price) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -29,7 +30,7 @@ public class ProductReadModel {
         return description;
     }
 
-    public Price getPrice() {
-        return price;
+    public BigDecimal getPrice() {
+        return price.value();
     }
 }

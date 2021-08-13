@@ -9,10 +9,12 @@ import java.util.UUID;
 public class ProductDto {
     private static final String NO_ID = null;
 
-    private final String id;
-    private final String name;
-    private final BigDecimal price;
-    private final String description;
+    private String id;
+    private String name;
+    private BigDecimal price;
+    private String description;
+
+    public ProductDto() {}
 
     public ProductDto(String name, BigDecimal price, String description) {
         this(NO_ID, name, price, description);
@@ -31,5 +33,21 @@ public class ProductDto {
 
     UpdateProductCommand asUpdateProduct(UUID id) {
         return new UpdateProductCommand(id, price, description);
+    }
+
+    void setId(String id) {
+        this.id = id;
+    }
+
+    void setName(String name) {
+        this.name = name;
+    }
+
+    void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    void setDescription(String description) {
+        this.description = description;
     }
 }

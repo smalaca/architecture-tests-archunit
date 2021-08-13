@@ -1,14 +1,14 @@
 package com.smalaca.query.product;
 
-import com.smalaca.command.product.Price;
 import com.smalaca.persistency.product.ProductReadModel;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 public class ProductShortView {
     private final UUID id;
     private final String name;
-    private final Price price;
+    private final BigDecimal price;
 
     ProductShortView(ProductReadModel product) {
         id = product.getId();
@@ -24,7 +24,7 @@ public class ProductShortView {
         return name;
     }
 
-    public Price getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 }

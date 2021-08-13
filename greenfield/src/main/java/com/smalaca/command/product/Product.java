@@ -1,5 +1,6 @@
 package com.smalaca.command.product;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,6 +14,8 @@ public class Product {
     private UUID id;
     private String name;
     private String description;
+
+    @Embedded
     private Price price;
 
     private Product() {}

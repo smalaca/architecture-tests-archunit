@@ -1,11 +1,13 @@
 package com.smalaca.query.product;
 
 import com.smalaca.persistency.product.SpringDataProductRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Repository
 public class ProductQueryRepository {
     private final SpringDataProductRepository repository;
 
