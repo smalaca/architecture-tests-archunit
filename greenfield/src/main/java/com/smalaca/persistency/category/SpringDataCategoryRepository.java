@@ -2,7 +2,6 @@ package com.smalaca.persistency.category;
 
 import com.smalaca.command.category.Category;
 import com.smalaca.command.category.CategoryRepository;
-import com.smalaca.query.category.CategoryView;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -21,11 +20,11 @@ public class SpringDataCategoryRepository implements CategoryRepository {
         return repository.save(category).getId();
     }
 
-    public List<CategoryView> findAll() {
+    public List<CategoryReadModel> findAll() {
         return repository.findAllCategories();
     }
 
-    public CategoryView findCategoryById(UUID id) {
+    public CategoryReadModel findCategoryById(UUID id) {
         return repository.findCategoryById(id).orElseThrow(() -> CategoryException.notFound(id));
     }
 }
