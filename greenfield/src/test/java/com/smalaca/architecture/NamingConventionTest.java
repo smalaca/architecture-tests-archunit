@@ -8,6 +8,8 @@ public class NamingConventionTest {
     void shouldNotContainInterfaceWordInInterfaceName() {
         ArchRuleDefinition.classes().that().areInterfaces()
                 .should().haveSimpleNameNotEndingWith("Interface")
+                .as("Interface do not have Interface word in the name")
+                .because("it is a signal the abstraction have got invalid name or it is uneccessary")
                 .check(GreenFieldAppClasses.get());
     }
 
