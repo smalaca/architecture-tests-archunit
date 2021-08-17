@@ -14,6 +14,13 @@ public class NamingConventionTest {
                 .check(greenFieldAppClasses());
     }
 
+    @Test
+    void shouldNotContainImplInClassName() {
+        ArchRuleDefinition.classes().that().areNotInterfaces()
+                .should().haveSimpleNameNotEndingWith("Impl")
+                .check(greenFieldAppClasses());
+    }
+
     private JavaClasses greenFieldAppClasses() {
         return new ClassFileImporter()
                 .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_JARS)
