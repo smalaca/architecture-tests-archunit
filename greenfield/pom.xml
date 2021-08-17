@@ -16,4 +16,12 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.tngtech.archunit</groupId>
+            <artifactId>archunit-junit5</artifactId>
+            <version>0.20.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
