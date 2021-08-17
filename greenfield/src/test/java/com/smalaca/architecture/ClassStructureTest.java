@@ -12,6 +12,11 @@ public class ClassStructureTest {
         GeneralCodingRules.NO_CLASSES_SHOULD_USE_FIELD_INJECTION.check(greenFieldAppClasses());
     }
 
+    @Test
+    void shouldNotThrowGeneralException() {
+        GeneralCodingRules.NO_CLASSES_SHOULD_THROW_GENERIC_EXCEPTIONS.check(greenFieldAppClasses());
+    }
+
     private JavaClasses greenFieldAppClasses() {
         return new ClassFileImporter()
                 .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_JARS)
